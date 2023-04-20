@@ -7,6 +7,7 @@ import LoginModal from './Components/Modals/LoginModal';
 import RegisterModal from './Components/Modals/RegisterModal';
 import MessageModal from './Components/Modals/MessageModal';
 import InformationModal from './Components/Modals/InformationModal';
+import NavbarComponent from './Components/Navbar';
 
 function App() {
   const [loginModalState, setLoginModalState] = useState(false);
@@ -118,6 +119,9 @@ function App() {
         informationModalReservation={informationModalReservation}
         showMessageModal={showMessageModal}
         hideInformationModal={hideInformationModal}
+        userInformation={userInformation}
+      />
+      <NavbarComponent
         userInformation={userInformation}
       />
       <Calendar
