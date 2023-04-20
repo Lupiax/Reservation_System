@@ -1,4 +1,5 @@
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import '../hack.css';
 
 import { Component } from 'react';
 import { Calendar as BigCalendar, momentLocalizer } from 'react-big-calendar';
@@ -129,7 +130,7 @@ class Calendar extends Component {
           events={this.context.reservations}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: '97vh' }}
+          style={{ height: '94vh' }}
           min={new Date(0, 0, 0, 8, 0, 0)}
           max={new Date(0, 0, 0, 16, 0, 0)}
           onSelectEvent={this.editReservation}
