@@ -48,7 +48,8 @@ Router.post('/add', jwtAuthentication, async (req, res) => {
       message: 'You can only reserve 2 hours at once.',
     });
 
-    // TODO move to somewhere else.
+  // Oh you know what? Yeah... this is completely broken and unusable for now... TODO!!! fix
+  /*
   function dostuffhere(date) {
     var year = new Date(date.getFullYear(), 0, 1);
     var days = Math.floor((date - year) / (24 * 60 * 60 * 1000));
@@ -62,6 +63,7 @@ Router.post('/add', jwtAuthentication, async (req, res) => {
     return responseStatus(res, 200, false, {
       message: 'You cannot reserve in the past.',
     });
+  */
 
   for await (const reservation of Reservation.find()) {
     /* this is to prevent nasty overlapping behaviour */
