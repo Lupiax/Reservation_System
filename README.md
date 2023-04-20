@@ -1,2 +1,13 @@
 # Reservation_System
-Reservation System which works I guess.
+
+Enjoy :)
+
+# backend
+
+contains all the server sided coded.
+
+# frontend
+
+contains the user interface code.
+
+Btw, I re-wrote the frontend completely so it is now clean.
