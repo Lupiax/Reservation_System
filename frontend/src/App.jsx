@@ -8,6 +8,7 @@ import RegisterModal from './Components/Modals/RegisterModal';
 import MessageModal from './Components/Modals/MessageModal';
 import InformationModal from './Components/Modals/InformationModal';
 import NavbarComponent from './Components/Navbar';
+import ReservationModal from './Components/Modals/reservationModal';
 
 function App() {
   const [loginModalState, setLoginModalState] = useState(false);
@@ -56,6 +57,19 @@ function App() {
 
   function hideInformationModal() {
     setInformationModalState(false);
+  }
+
+  const [reservationModalState, setReservationModalState] = useState(false);
+  const [reservationModalStart, setReservationModalStart] = useState(new Date());
+  const [reservationModalEnd, setReservationModalEnd] = useState(new Date());
+
+  function showReservationModal(start, end) {
+    setReservationModalStart(start);
+    setReservationModalEnd(end);
+    setReservationModalState(true);
+  }
+  function hideReservationModal() {
+    setReservationModalState(false);
   }
 
   const [userInformation, setUserInformation] = useState({
@@ -121,6 +135,13 @@ function App() {
         hideInformationModal={hideInformationModal}
         userInformation={userInformation}
       />
+      <ReservationModal
+        reservationModalState={reservationModalState}
+        hideReservationModal={hideReservationModal}
+        showMessageModal={showMessageModal}
+        start={reservationModalStart}
+        end={reservationModalEnd}
+      />
       <NavbarComponent
         userInformation={userInformation}
       />
@@ -129,6 +150,7 @@ function App() {
         showLoginModal={showLoginModal}
         showMessageModal={showMessageModal}
         showInformationModal={showInformationModal}
+        showReservationModal={showReservationModal}
       />
     </div>
   );
